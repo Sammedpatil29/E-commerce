@@ -1,0 +1,14 @@
+<div *ngIf="showbox" [style.background-color]="selectedLanguage">
+    <div class="toast">
+      <div></div>
+      <div *ngIf="selectedLanguage == 'en'" class="toptxt">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!<span class="shpnw">ShopNow</span> </div>
+      <div *ngIf="selectedLanguage == 'ka'" class="toptxt">ಸಮರ ಬಿಕಿನಿ ಸೂಟ್‌ಗಳಿಗೆ ಸಮರ್‌ ಸೇಲ್ ಮತ್ತು ಉಚಿತ ಎಕ್ಸ್‌ಪ್ರೆಸ್‌ ಬಹುಮಾನ - OFF 50%!<span class="shpnw">ShopNow</span> </div>
+      <div>
+        <select id="language" [(ngModel)]="selectedLanguage">
+          <option *ngFor="let option of languageOptions" [value]="option.code">{{ option.label }}</option>
+        </select>
+      </div>
+      
+      <div class="toptxt"><button class="btn" (click)="close()">Dismiss</button></div>
+    </div>
+  </div>
